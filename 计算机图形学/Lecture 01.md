@@ -1,6 +1,6 @@
 # 计算机图形学
 
-## Lecture 01
+## Lecture 01  主要内容
 
 ### 1. 光栅化   Rasterization
 
