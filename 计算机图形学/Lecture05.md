@@ -31,3 +31,4 @@
 
 对于是否在区内部，在就进行光栅化，不在就不需要，可以用双重循环判断点是否在三角形内部。
 
+![scale]( https://github.com/LXYYYYY/notes/raw/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/img/05_01.jpg)
