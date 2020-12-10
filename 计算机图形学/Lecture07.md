@@ -11,7 +11,7 @@
 - 光向量  $\vec I$
 - 以及物体本身的属性参数
 
-插入图1
+![img](https://github.com/LXYYYYY/notes/raw/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/img/07_01.jpg)
 
 #### 1. 漫反射模型
 
