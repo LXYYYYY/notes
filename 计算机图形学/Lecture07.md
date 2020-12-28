@@ -1,6 +1,6 @@
 # 计算机图形学
 
-## Lecture 07  着色	Shading  和 局部光照模型(Blinn-Phong 反射模型)
+## Lecture 07-09  着色	Shading  和 局部光照模型(Blinn-Phong 反射模型)
 
 ### 光照模型
 
@@ -43,3 +43,22 @@
 
 (tips：通过改变漫反射模型的3维反射系数![[公式]](https://www.zhihu.com/equation?tex=k_d)，我们就能够得到物体表面不同的颜色)
 
+#### 2. Phong反射模型
+
+如图所示![[公式]](https://www.zhihu.com/equation?tex=R)为镜面反射方向,![[公式]](https://www.zhihu.com/equation?tex=v)为人眼观察方向。
+
+![img](https://pic1.zhimg.com/80/v2-15a8b2c0a6e065e190603fdf63602d70_720w.jpg)
+
+除了考虑漫反射中提到的光源到反射点的距离![[公式]](https://www.zhihu.com/equation?tex=r)之外，需要注意的是，观察方向在镜面反射时是很重要的，具体来说，只有当观察方向集中在反射方向周围很近的时候才能看见反射光，因此在镜面反射中会考虑 ![[公式]](https://www.zhihu.com/equation?tex=R) 与 ![[公式]](https://www.zhihu.com/equation?tex=v) 的夹角 ![[公式]](https://www.zhihu.com/equation?tex=%5Calpha)。如下式：
+
+![img](https://pic4.zhimg.com/80/v2-61b199802ffde5cd0603ac426c859387_720w.png)
+
+其中![[公式]](https://www.zhihu.com/equation?tex=k_s)为镜面反射系数，![[公式]](https://www.zhihu.com/equation?tex=I)为入射光强，![[公式]](https://www.zhihu.com/equation?tex=r)为光源到入射点距离，注意这里在max剔除大于90°的光之后，我们还乘了一个指数p，添加该项的原因很直接，因为离反射光越远就越不应该看见反射光，需要一个指数p加速衰减
+
+![img](https://pic4.zhimg.com/80/v2-23a1bcca580d90b36364a2c806a76447_720w.jpg)
+
+最后我们把环境光，漫反射光，镜面反射光全部累加得到Phong模型效果：
+
+![img](https://pic4.zhimg.com/80/v2-bf1c2fe5e71588567e00a38fd4d2ceeb_720w.jpg)
+
+可以看出，此时模型其实已经非常接近真实效果了！那么Blinn-Phong反射模型是什么呢？它只是对phong模型计算反射方向与人眼观察方向角度的一个优化！
